@@ -70,14 +70,14 @@ def stream_markup_timer(_, chat_id, played, dur):
 
                 text="😈ᴏᴡɴᴇʀ😈",
 
-                url=f"t.me/{aboutcutex}",
+                url=f"t.me/{OWNER_USRENAME}",
 
             ),
             InlineKeyboardButton(
 
                 text="✨ ᴄʜᴀɴɴᴇʟ ✨",
 
-                url=f"t.me/{hyperxfellings}",
+                url=f"{SUPPORT_CHAT}",
 
             ),
         ],
@@ -99,14 +99,14 @@ def stream_markup(_, chat_id):
 
                 text="😈ᴏᴡɴᴇʀ😈",
 
-                url=f"t.me/{aboutcutex}",
+                url=f"t.me/{OWNER_USERNAME}",
 
             ),
             InlineKeyboardButton(
 
                 text="✨ ᴄʜᴀɴɴᴇʟ ✨",
 
-                url=f"t.me/{hyperxfellings}",
+                url=f"{SUPPORT_CHAT}",
 
             ),
         ],
