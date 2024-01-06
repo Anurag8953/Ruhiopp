@@ -32,26 +32,29 @@ def stream_markup_timer(_, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
-    if 0 < umm <= 10:
-        bar = "◉—————————"
-    elif 10 < umm < 20:
-        bar = "—◉————————"
-    elif 20 <= umm < 30:
-        bar = "——◉———————"
-    elif 30 <= umm < 40:
-        bar = "———◉——————"
-    elif 40 <= umm < 50:
-        bar = "————◉—————"
-    elif 50 <= umm < 60:
-        bar = "—————◉————"
-    elif 60 <= umm < 70:
-        bar = "——————◉———"
-    elif 70 <= umm < 80:
-        bar = "———————◉——"
-    elif 80 <= umm < 95:
-        bar = "————————◉—"
+    if 0<badboy<=10:
+        return "✄─·─·─·─·─·─·─·─·─·─"
+    elif 10<badboy<=20:
+        return "-ˋˏ✄─·─·─·─·─·─·─·─·─"
+    elif 20<badboy<=30:
+        return "-ˋˏ-ˋˏ✄─·─·─·─·─·─·─·─"
+    elif 30<badboy<=40:
+        return "-ˋˏ-ˋˏ-ˋˏ✄─·─·─·─·─·─·─"
+    elif 40<badboy<=50:
+        return "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄─·─·─·─·─·─"
+    elif 50<badboy<=60:
+        return "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄─·─·─·─·─"
+    elif 60<badboy<=70:
+        return "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄─·─·─·─"
+    elif 70<badboy<=80:
+        return "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄─·─·─·─"
+    elif 80<badboy<=90:
+        return "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄─·─·─"
+    elif 90<badboy<=100:
+        return "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄─·"
     else:
-        bar = "—————————◉"
+        return "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
+    
     buttons = [
                 [
             InlineKeyboardButton(
@@ -62,6 +65,7 @@ def stream_markup_timer(_, chat_id, played, dur):
         [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="⛦", callback_data=f"add_playlist {videoid}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
@@ -80,8 +84,15 @@ def stream_markup_timer(_, chat_id, played, dur):
                 url=f"{SUPPORT_CHAT}",
 
             ),
+                     ],
+                     
+        [
+            InlineKeyboardButton(
+                text=ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ ❣️ +,
+                url=f"https://t.me/{app.username}?startgroup=true",
+            )
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+                
     ]
     return buttons
 
@@ -91,6 +102,7 @@ def stream_markup(_, chat_id):
         [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="⛦", callback_data=f"add_playlist {videoid}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
@@ -109,8 +121,14 @@ def stream_markup(_, chat_id):
                 url=f"{SUPPORT_CHAT}",
 
             ),
+                 ],
+                     
+        [
+            InlineKeyboardButton(
+                text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ ❣️ +",
+                url=f"https://t.me/{app.username}?startgroup=true",
+            )
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
